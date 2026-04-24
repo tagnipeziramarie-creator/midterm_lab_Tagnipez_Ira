@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Semantic Document</title>
+    <style>
+        /* Tag Selectors */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            background-color: #34495e;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        section {
+            padding: 40px 20px;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        article {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        aside {
+            background-color: #ecf0f1;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 1200px;
+            border-left: 5px solid #3498db;
+            border-radius: 4px;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #34495e;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Class Selectors */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            background-color: #2c3e50;
+            color: #3498db;
+        }
+
+        .featured {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .featured h2 {
+            color: white;
+            font-size: 32px;
+        }
+
+        .featured p {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #856404;
+        }
+
+        .sidebar-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .info-box {
+            background-color: #d1ecf1;
+            border: 2px solid #0c5460;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            color: #0c5460;
+        }
+
+        .sidebar-links {
+            margin-left: 15px;
+        }
+
+        .sidebar-links a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .sidebar-links a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        /* Student Info Styles */
+        .student-info {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px 20px;
+            margin-top: 15px;
+            border-radius: 6px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .student-info p {
+            margin: 8px 0;
+            font-size: 16px;
+            color: white;
+            text-align: left;
+        }
+
+        .student-info strong {
+            color: #ffd700;
+            font-weight: 700;
+        }
+
+        /* Button Styles */
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 10px 5px 10px 0;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-danger {
+            background-color: #e74c3c;
+        }
+
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+
+        .btn-success {
+            background-color: #27ae60;
+        }
+
+        .btn-success:hover {
+            background-color: #229954;
+        }
+
+        /* Input Styles */
+        .input-group {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #bdc3c7;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+        }
+
+        /* Dynamic Display */
+        #input-display {
+            margin-top: 10px;
+            padding: 15px;
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+            min-height: 40px;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .dynamic-content {
+            background-color: #fff8e1;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border: 2px solid #ffc107;
+            display: none;
+        }
+
+        .dynamic-content.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ID Selectors */
+        #main-header {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        #main-content {
+            display: flex;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        #articles-column {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        #sidebar-column {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        #footer-text {
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        #copyright {
+            margin-top: 10px;
+            opacity: 0.9;
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            #main-content {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with ID selector -->
+    <header id="main-header">
+        <h1>Welcome to My Website</h1>
+        <p>Exploring HTML5 Semantic Elements with CSS Styling</p>
+        <div class="student-info">
+            <p><strong>Student Name:</strong> Ira Marie Tagnipez</p>
+            <p><strong>Course:</strong> Bachelor of Science in Information Technology</p>
+        </div>
+    </header>
+
+    <!-- Navigation with class selectors -->
+    <nav>
+        <div class="container">
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content with ID selectors -->
+    <div id="main-content">
+        <!-- Articles column -->
+        <section id="articles-column">
+            <!-- Featured article with class selectors -->
+            <article class="featured">
+                <h2>Featured Article</h2>
+                <p>This is a featured article demonstrating the use of <span class="highlight">class selectors</span> and semantic HTML5 elements. The styling combines multiple CSS selector types to create an attractive and readable layout.</p>
+                
+                <div style="margin-top: 20px;">
+                    <button class="btn" onclick="showAlert()">Click to Show Alert</button>
+                    <button class="btn btn-success" onclick="toggleDynamicContent()">Toggle Dynamic Content</button>
+                </div>
+            </article>
+
+            <!-- Dynamic Content Section -->
+            <div id="dynamic-message" class="dynamic-content">
+                <h3>✓ Dynamic Content Activated!</h3>
+                <p>This content was displayed dynamically when you clicked the button. It demonstrates JavaScript functionality for showing/hiding elements on demand.</p>
+            </div>
+
+            <!-- Input Feedback Article -->
+            <article>
+                <h3>Dynamic Input Display</h3>
+                <p>Type in the input field below to see your text displayed dynamically in real-time without refreshing the page.</p>
+                
+                <div class="input-group">
+                    <label for="dynamic-input">Enter Your Message:</label>
+                    <input type="text" id="dynamic-input" placeholder="Type something here..." oninput="updateDisplay()">
+                    <div id="input-display">Your message will appear here...</div>
+                </div>
+            </article>
+
+            <!-- Regular article -->
+            <article>
+                <h3>Understanding HTML5 Semantic Elements</h3>
+                <p>HTML5 introduced several semantic elements that provide meaning to web pages rather than just presentation. These elements include &lt;header&gt;, &lt;nav&gt;, &lt;section&gt;, &lt;article&gt;, &lt;aside&gt;, and &lt;footer&gt;.</p>
+                <p>Using semantic elements helps with:</p>
+                <ul>
+                    <li>Search engine optimization (SEO)</li>
+                    <li>Accessibility for screen readers</li>
+                    <li>Code readability and maintainability</li>
+                    <li>Better document structure</li>
+                </ul>
+            </article>
+
+            <!-- Another article -->
+            <article>
+                <h3>CSS Selectors Explained</h3>
+                <p>CSS provides three main types of selectors demonstrated in this document:</p>
+                <ol>
+                    <li><strong>Tag Selectors:</strong> Target HTML elements directly (e.g., header, nav, article)</li>
+                    <li><strong>Class Selectors:</strong> Target elements with specific class names (e.g., .featured, .highlight)</li>
+                    <li><strong>ID Selectors:</strong> Target unique elements with specific IDs (e.g., #main-header, #main-content)</li>
+                </ol>
+                <p>Combining these selectors allows for precise and flexible styling of web pages.</p>
+            </article>
+        </section>
+
+        <!-- Sidebar with ID selector -->
+        <aside id="sidebar-column">
+            <h3 class="sidebar-title">Important Information</h3>
+            
+            <div class="info-box">
+                <strong>Responsive Design:</strong> This layout is fully responsive and adapts to different screen sizes using CSS media queries.
+            </div>
+
+            <div class="info-box">
+                <strong>Accessibility:</strong> The use of semantic HTML5 elements improves accessibility for all users, including those using assistive technologies.
+            </div>
+
+            <h3 class="sidebar-title">Quick Links</h3>
+            <ul class="sidebar-links">
+                <li><a href="#home">Learn HTML5</a></li>
+                <li><a href="#about">Master CSS</a></li>
+                <li><a href="#services">JavaScript Guide</a></li>
+                <li><a href="#contact">Web Design Tips</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p id="footer-text">Thank you for visiting this HTML5 and CSS demonstration page</p>
+        <p id="copyright">&copy; 2026 Semantic HTML & CSS Styling. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Interactive Features -->
+    <script>
+        // Part 2: Interactive Features
+        
+        // Function to show alert on button click
+        function showAlert() {
+            alert(`Welcome!\n\nStudent Name: Ira Marie Tagnipez\nCourse: Bachelor of Science in Information Technology\n\nThank you for exploring this interactive page!`);
+        }
+
+        // Function to update input display dynamically
+        function updateDisplay() {
+            const inputValue = document.getElementById('dynamic-input').value;
+            const displayArea = document.getElementById('input-display');
+            
+            if (inputValue.trim() === '') {
+                displayArea.textContent = 'Your message will appear here...';
+                displayArea.style.color = '#999';
+            } else {
+                displayArea.textContent = '📝 You typed: ' + inputValue;
+                displayArea.style.color = '#2c3e50';
+            }
+        }
+
+        // Function to toggle dynamic content
+        function toggleDynamicContent() {
+            const dynamicContent = document.getElementById('dynamic-message');
+            dynamicContent.classList.toggle('show');
+        }
+
+        // Initialize input display on page load
+        window.addEventListener('load', function() {
+            updateDisplay();
+        });
+    </script>
+</body>
+</html>
+
+
