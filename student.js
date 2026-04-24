@@ -1,6 +1,6 @@
 // Student Information Object
 const student = {
-    name: "Ira Marie Tagnipez",
+    name: "Ira Marie A. Tagnipez",
     course: "Bachelor of Science in Information Technology",
     yearLevel: "3rd Year",
     favoriteProgrammingLanguage: "JavaScript"
